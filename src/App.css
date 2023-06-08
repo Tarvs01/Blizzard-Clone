@@ -1,0 +1,194 @@
+@font-face {
+  font-family: poppins;
+  src: url(fonts/Poppins-Medium.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  width: 98vw;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #2D304D;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  height: fit-content;
+  padding: 5px 10px;
+}
+.nav-left img, .nav-right img {
+  height: 40px;
+  margin-right: 10px;
+}
+.nav-left .nav-left-item, .nav-right .nav-left-item {
+  font-size: 18px;
+}
+.nav-left .nav-right-item, .nav-right .nav-right-item {
+  font-size: 16px;
+}
+.nav-left .nav-left-item, .nav-left .nav-right-item, .nav-right .nav-left-item, .nav-right .nav-right-item {
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.nav-left .nav-left-item svg, .nav-left .nav-right-item svg, .nav-right .nav-left-item svg, .nav-right .nav-right-item svg {
+  width: 15px;
+  /* color: rgb(161, 161, 161); */
+  color: hsla(0deg, 0%, 100%, 0.3);
+  display: block;
+  margin-left: 5px;
+}
+.nav-left .nav-left-item:hover, .nav-left .nav-right-item:hover, .nav-right .nav-left-item:hover, .nav-right .nav-right-item:hover {
+  background-color: #41445C;
+  cursor: pointer;
+}
+.nav-left .nav-starcraft, .nav-right .nav-starcraft {
+  display: flex;
+  background-color: rgba(40, 45, 67, 0.8);
+}
+.nav-left #account-icon, .nav-right #account-icon {
+  width: 30px;
+}
+.nav-left .nav-button, .nav-right .nav-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  background-color: #060c11;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.nav-left .nav-button svg, .nav-right .nav-button svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.nav-left .nav-button:hover, .nav-right .nav-button:hover {
+  background-color: #101723;
+}
+.nav-left #nav-last:hover, .nav-right #nav-last:hover {
+  background-color: transparent;
+}
+
+.nav-hover-cont {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border-radius: 10px;
+  top: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  min-width: 300px;
+}
+.nav-hover-cont .nav-hover-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #171926;
+}
+.nav-hover-cont .nav-hover-item:hover {
+  background-color: #232531;
+}
+.nav-hover-cont .nav-hover-item .nav-hover-words {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+.nav-hover-cont .nav-hover-item .nav-hover-words .nav-hover-genre {
+  color: gray;
+  font-size: 14px;
+}
+.nav-hover-cont .nav-hover-item .nav-hover-words .nav-hover-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav-hover-cont .nav-hover-item .nav-hover-words .nav-hover-title svg {
+  display: inline-block;
+  height: 15px;
+  position: relative;
+  left: -5px;
+  top: 1px;
+}
+
+.nav-hover-left img,
+.nav-hover-left svg {
+  height: 48px;
+  width: 48px;
+  margin-right: 10px;
+  display: block;
+}
+
+.nav-hover-right img, .nav-hover-right svg {
+  height: 24px;
+  width: 24px !important;
+  margin-right: 10px;
+  display: block;
+}
+
+.nav-hover-main {
+  width: 100%;
+  background-color: #171926;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nav-hover-upcoming {
+  background-color: #10111B;
+  border-radius: 0 0 10px 10px;
+  padding: 0 0 10px;
+}
+.nav-hover-upcoming p {
+  color: gray;
+  font-size: 14px;
+  margin: 5px 5px;
+  padding: 10px 19px 0;
+  font-weight: 600;
+}
+
+.nav-hover-arrow {
+  height: 10px;
+  width: 25px;
+  background-color: #171926;
+  margin: 0 auto;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.nav-hover-new {
+  background-color: #1FB8FF;
+  color: black;
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=App.css.map */

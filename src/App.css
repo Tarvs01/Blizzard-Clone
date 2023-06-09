@@ -1,6 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @font-face {
   font-family: poppins;
   src: url(fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: poppinsSemi;
+  src: url(fonts/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: poppinsBold;
+  src: url(fonts/Poppins-Bold.ttf);
 }
 * {
   padding: 0;
@@ -25,6 +34,15 @@ nav {
   align-items: center;
 }
 
+.nav-left li > svg {
+  height: 40px;
+  margin-right: 10px;
+  color: rgb(0, 174, 255);
+}
+.nav-left li > svg:hover {
+  color: #00D1FF;
+}
+
 .nav-left, .nav-right {
   display: flex;
   flex-direction: row;
@@ -33,10 +51,6 @@ nav {
   height: fit-content;
   padding: 5px 10px;
 }
-.nav-left img, .nav-right img {
-  height: 40px;
-  margin-right: 10px;
-}
 .nav-left .nav-left-item, .nav-right .nav-left-item {
   font-size: 18px;
 }
@@ -44,7 +58,7 @@ nav {
   font-size: 16px;
 }
 .nav-left .nav-left-item, .nav-left .nav-right-item, .nav-right .nav-left-item, .nav-right .nav-right-item {
-  font-family: poppins, Arial, Helvetica, sans-serif;
+  font-family: poppinsSemi, Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -63,7 +77,10 @@ nav {
   background-color: #41445C;
   cursor: pointer;
 }
-.nav-left .nav-starcraft, .nav-right .nav-starcraft {
+.nav-left .nav-left-item:hover .nav-hover-cont, .nav-left .nav-right-item:hover .nav-hover-cont, .nav-right .nav-left-item:hover .nav-hover-cont, .nav-right .nav-right-item:hover .nav-hover-cont {
+  display: flex;
+}
+.nav-left .nav-more, .nav-right .nav-more {
   display: flex;
   background-color: rgba(40, 45, 67, 0.8);
 }
@@ -99,11 +116,13 @@ nav {
   flex-direction: column;
   position: absolute;
   border-radius: 10px;
-  top: 54px;
+  top: 64px;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
   min-width: 300px;
+  background-color: #171926;
+  display: none;
 }
 .nav-hover-cont .nav-hover-item {
   display: flex;
@@ -112,7 +131,6 @@ nav {
   margin: 5px 5px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #171926;
 }
 .nav-hover-cont .nav-hover-item:hover {
   background-color: #232531;
@@ -141,8 +159,8 @@ nav {
 
 .nav-hover-left img,
 .nav-hover-left svg {
-  height: 48px;
-  width: 48px;
+  height: 48px !important;
+  width: 48px !important;
   margin-right: 10px;
   display: block;
 }
@@ -161,12 +179,12 @@ nav {
   padding: 10px;
 }
 
-.nav-hover-upcoming {
+.nav-hover-submain {
   background-color: #10111B;
   border-radius: 0 0 10px 10px;
   padding: 0 0 10px;
 }
-.nav-hover-upcoming p {
+.nav-hover-submain p {
   color: gray;
   font-size: 14px;
   margin: 5px 5px;
@@ -180,6 +198,10 @@ nav {
   background-color: #171926;
   margin: 0 auto;
   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-hover-new {
@@ -189,6 +211,26 @@ nav {
   padding: 1px 4px;
   border-radius: 3px;
   margin-left: 5px;
+}
+
+.nav-hover-button {
+  display: flex;
+  justify-content: center;
+  background-color: #25A2F4;
+  margin: 15px 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.nav-hover-button .nav-button-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav-hover-button .nav-button-items svg {
+  color: white;
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=App.css.map */

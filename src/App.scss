@@ -1,8 +1,20 @@
 $hover-fade: #232531;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @font-face {
     font-family: poppins;
     src: url(fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: poppinsSemi;
+    src: url(fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url(fonts/Poppins-Bold.ttf);
 }
 
 * {
@@ -28,6 +40,17 @@ nav {
     align-items: center;
 }
 
+.nav-left li > svg{
+    height: 40px;
+    margin-right: 10px;
+    color: rgb(0, 174, 255);
+    
+    &:hover {
+        color: #00D1FF;
+    }
+
+}
+
 .nav-left, .nav-right {
     display: flex;
     flex-direction: row;
@@ -35,11 +58,6 @@ nav {
     align-items: center;
     height: fit-content;
     padding: 5px 10px;
-
-    img {
-        height: 40px;
-        margin-right: 10px;
-    }
 
     .nav-left-item{
         font-size: 18px;
@@ -50,7 +68,7 @@ nav {
     }
 
     .nav-left-item, .nav-right-item {
-        font-family: poppins, Arial, Helvetica, sans-serif;
+        font-family: poppinsSemi, Arial, Helvetica, sans-serif;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -69,10 +87,14 @@ nav {
         &:hover{
             background-color: #41445C;
             cursor: pointer;
+
+            .nav-hover-cont{
+                display: flex;
+            }
         }
     }
 
-    .nav-starcraft{
+    .nav-more{
         display: flex;
         background-color: rgba(40, 45, 67, .8);
     }
@@ -114,11 +136,13 @@ nav {
     flex-direction: column;
     position: absolute;
     border-radius: 10px;
-    top: 54px;
+    top: 64px;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
     min-width: 300px;
+    background-color: #171926;
+    display: none;
 
     .nav-hover-item {
             display: flex;
@@ -127,7 +151,6 @@ nav {
             margin: 5px 5px;
             padding: 10px;
             border-radius: 5px;
-            background-color: #171926;
     
             &:hover {
                 background-color: $hover-fade;
@@ -163,8 +186,8 @@ nav {
 .nav-hover-left{
     img,
         svg {
-            height: 48px;
-            width: 48px;
+            height: 48px !important;
+            width: 48px !important;
             margin-right: 10px;
             display: block;
         }
@@ -186,7 +209,7 @@ nav {
     padding: 10px;
 }
 
-.nav-hover-upcoming{
+.nav-hover-submain{
     background-color: #10111B;
     border-radius: 0 0 10px 10px;
     padding: 0 0 10px;
@@ -206,6 +229,10 @@ nav {
     background-color: #171926;
     margin: 0 auto;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-hover-new{
@@ -215,4 +242,26 @@ nav {
     padding: 1px 4px;
     border-radius: 3px;
     margin-left: 5px;
+}
+
+.nav-hover-button{
+    display: flex;
+    justify-content: center;
+    background-color: #25A2F4;
+    margin: 15px 5px;
+    padding: 10px;
+    border-radius: 5px;
+
+    .nav-button-items{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        svg{
+            color: white;
+            height: 24px;
+            width: 24px;
+            margin-right: 10px;
+        }
+    }
 }

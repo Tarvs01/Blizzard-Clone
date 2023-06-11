@@ -1,4 +1,5 @@
 $hover-fade: #232531;
+$body-bg: #171717;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -23,6 +24,11 @@ $hover-fade: #232531;
     box-sizing: border-box;
 }
 
+body{
+    background-color: $body-bg;
+    overflow-x: hidden;
+}
+
 .App {
     position: relative;
 }
@@ -38,6 +44,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 200;
 }
 
 .nav-left li > svg{
@@ -96,7 +103,19 @@ nav {
 
     .nav-more{
         display: flex;
-        background-color: rgba(40, 45, 67, .8);
+        background-color: hsla(0, 0%, 100%, .05);
+        margin-left: 10px;
+
+        .dot-svg-cont{
+            display: flex;
+            flex-direction: row;
+        }
+
+        svg{
+            margin: 1.5px;
+            color: white;
+            width: 4px;
+        }
     }
 
     #account-icon{
@@ -129,6 +148,13 @@ nav {
     #nav-last:hover {
         background-color: transparent;
     }
+}
+
+.nav-hover-container{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100px;
 }
 
 .nav-hover-cont{
@@ -247,10 +273,14 @@ nav {
 .nav-hover-button{
     display: flex;
     justify-content: center;
-    background-color: #25A2F4;
+    background-color: #0c94ec;
     margin: 15px 5px;
     padding: 10px;
     border-radius: 5px;
+
+    &:hover{
+        background-color: #25A2F4;
+    }
 
     .nav-button-items{
         display: flex;
@@ -264,4 +294,81 @@ nav {
             margin-right: 10px;
         }
     }
+}
+
+.slider-cont{
+    width: 1109px;
+    /* margin: 0 auto; */
+    height: 110vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s ease;
+
+    &:has(.left-inactive-carousel:hover){
+        left: 51%;
+
+        .left-inactive-carousel{
+            opacity: 1;
+        }
+    }
+
+        &:has(.right-inactive-carousel:hover) {
+            left: 49%;
+    
+            .right-inactive-carousel {
+                opacity: 1;
+            }
+        }
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    background-position: -250px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transition: all ease 0.3s; */
+}
+
+.left-carousel-button, .right-carousel-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #333B4B;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+        background-color: #484F5D;
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+        color: #D0E9FF;
+    }
+}
+
+.left-carousel-button{
+    left: -4%;
+}
+
+.right-carousel-button{
+    right: -4%;
+}
+
+.active-carousel{
+    opacity: 1;
+}
+
+.inactive-carousel{
+    opacity: 0.6;
 }

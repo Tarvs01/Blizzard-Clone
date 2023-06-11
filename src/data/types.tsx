@@ -6,4 +6,6 @@ export interface SlideData {
   subHeading?: string;
   mainButtonText: string;
   secondaryButtonText?: string;
+  top: number;
+  imageWidth: number;
 }

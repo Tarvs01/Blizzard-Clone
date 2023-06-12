@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SlideData } from "../data/types";
 
-function Slide({ slide, translate }: { slide: SlideData; translate: number }) {
+interface SlideProperties {
+  slide: SlideData;
+  translate: number;
+  setActive: React.Dispatch<React.SetStateAction<number>>;
+}
+
+function Slide({ slide, translate, setActive }: SlideProperties) {
+  useEffect(() => {
+    if (translate === 0) {
+      setActive(slide.id);
+    }
+  });
+
   return (
     <div
       className={`slide ${
@@ -17,6 +29,12 @@ function Slide({ slide, translate }: { slide: SlideData; translate: number }) {
         }`,
       }}
     >
+      {slide.hasOverlay && (
+        <div
+          className="slide-overlay"
+          style={{ backgroundColor: `${slide?.overlayColor}` }}
+        ></div>
+      )}
       <div className="slide-content-cont" style={{ top: `${slide.top}%` }}>
         <img
           src={`../pictures/${slide.image}`}

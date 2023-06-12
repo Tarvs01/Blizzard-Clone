@@ -8,4 +8,6 @@ export interface SlideData {
   secondaryButtonText?: string;
   top: number;
   imageWidth: number;
+  hasOverlay: boolean;
+  overlayColor?: string;
 }

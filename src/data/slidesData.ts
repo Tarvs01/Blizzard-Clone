@@ -4,13 +4,13 @@ export const slidesData : SlideData[] = [
     {
         id : 1,
         bgImage : "WoW_WelcomeBackWeekend_BlizzardBanner_NewDesktop_1600x720.webp",
-        image : "",
-        mainHeading : "",
-        subHeading : "",
-        mainButtonText : "",
-        secondaryButtonText : "",
-        top: 5,
-        imageWidth: 300
+        image : "WoW_EmbersNeltharion_Logo.webp",
+        mainHeading : "Witness Neltharion's legacy",
+        subHeading : "New zone, quests, season, raid, and more!",
+        mainButtonText : "Learn More",
+        top: 12,
+        imageWidth: 300,
+        hasOverlay: true
     },
     {
         id : 2,
@@ -18,8 +18,10 @@ export const slidesData : SlideData[] = [
         image : "overwatch2_logo.webp",
         mainHeading : "Season 4 is now live",
         mainButtonText : "Learn More",
-        top: 4,
-        imageWidth: 300
+        top: 40,
+        imageWidth: 300,
+        hasOverlay: true,
+        overlayColor: "rgba(0, 0, 0, .1)"
     },
     {
         id : 3,
@@ -30,7 +32,8 @@ export const slidesData : SlideData[] = [
         mainButtonText : "Buy Now",
         secondaryButtonText : "",
         top: 25,
-        imageWidth: 300
+        imageWidth: 300,
+        hasOverlay: false
     },
     {
         id : 4,
@@ -41,7 +44,8 @@ export const slidesData : SlideData[] = [
         mainButtonText : "Learn More",
         secondaryButtonText : "",
         top: 16,
-        imageWidth: 290
+        imageWidth: 290,
+        hasOverlay: true
     },
     {
         id : 5,
@@ -52,6 +56,7 @@ export const slidesData : SlideData[] = [
         mainButtonText : "Buy Now",
         secondaryButtonText : "Learn More",
         top: 20,
-        imageWidth: 250
+        imageWidth: 250,
+        hasOverlay: true
     },
 ]

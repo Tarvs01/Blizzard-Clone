@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Slide from "./Slide";
 import { slidesData } from "../data/slidesData";
+import SliderTab from "./SliderTab";
 
 function Carousel() {
   let numberOfSlides = slidesData.length;
+
   const [translates, setTranslates] = useState([0]);
+  const [activeSlideId, setActiveSlideId] = useState(1);
 
   useEffect(() => {
     let initial = -2;
@@ -41,6 +44,54 @@ function Carousel() {
     setTranslates(newArray);
   }
 
+  function goToSlide(id: number) {
+    let actualActive = 0;
+    if (activeSlideId === 1) {
+      actualActive = numberOfSlides - 1;
+    } else if (activeSlideId == 2) {
+      actualActive = numberOfSlides;
+    } else {
+      actualActive = activeSlideId - 2;
+    }
+
+    console.log("active slide is " + actualActive);
+    console.log("new slide is " + id);
+
+    let translateArray = [...translates];
+    console.log(translateArray);
+
+    if (id < actualActive) {
+      for (let i = 0; i < actualActive - id; i++) {
+        let newArray = [];
+        for (let i of translateArray) {
+          if (i === numberOfSlides - 3) {
+            newArray.push(-2);
+          } else {
+            newArray.push(i + 1);
+          }
+        }
+        translateArray = [...newArray];
+      }
+    } else if (id > actualActive) {
+      for (let i = 0; i < id - actualActive; i++) {
+        let newArray = [];
+
+        for (let i of translateArray) {
+          if (i === -2) {
+            newArray.push(numberOfSlides - 3);
+          } else {
+            newArray.push(i - 1);
+          }
+        }
+        translateArray = [...newArray];
+      }
+    } else {
+    }
+
+    setTranslates(translateArray);
+    console.log(translateArray);
+  }
+
   return (
     <div>
       <div className="hero-cont">
@@ -49,7 +100,11 @@ function Carousel() {
             return (
               <Slide
                 key={slide.id}
-                {...{ slide, translate: translates[slide.id - 1] }}
+                {...{
+                  slide,
+                  translate: translates[slide.id - 1],
+                  setActive: setActiveSlideId,
+                }}
               />
             );
           })}
@@ -83,6 +138,21 @@ function Carousel() {
             >
               <path d="M9 18L15 12L9 6"></path>
             </svg>
+          </div>
+
+          <div className="slider-tabs-cont">
+            {slidesData.map((slide) => {
+              return (
+                <SliderTab
+                  key={slide.id}
+                  id={slide.id}
+                  active={activeSlideId}
+                  setActive={setActiveSlideId}
+                  numOfSlides={numberOfSlides}
+                  goto={goToSlide}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

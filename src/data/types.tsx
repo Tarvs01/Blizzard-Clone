@@ -11,3 +11,15 @@ export interface SlideData {
   hasOverlay: boolean;
   overlayColor?: string;
 }
+
+export interface gameCardData {
+  id: number;
+  name: string;
+  genre: string;
+  isNew: boolean;
+  image: string;
+  video: string;
+  bgImage: string;
+  platforms: string[];
+  generalPlatforms: string[];
+}

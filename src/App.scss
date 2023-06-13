@@ -32,6 +32,7 @@ $body-bg: #171717;
 body{
     background-color: $body-bg;
     overflow-x: hidden;
+    color: white;
 }
 
 .App {
@@ -306,15 +307,17 @@ nav {
     }
 }
 
+.carousel-cont {
+    background-image: linear-gradient(270deg, #203955, #243548);
+}
+
 .slider-cont{
     width: 1109px;
-    /* margin: 0 auto; */
     height: 110vh;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.2s ease;
-    margin-bottom: 900px;
 
     &:has(.left-inactive-carousel:hover){
         left: 51%;
@@ -479,4 +482,112 @@ nav {
 #active-tab{
     background-color: white;
     transform: scaleY(1.3);
+}
+
+.home-games-container{
+    background-image: url(pictures/2600_Featured_Games.webp);
+    position: relative;
+    top: -20px;
+    z-index: -1;
+    padding: 20px;
+    background-size: cover;
+}
+
+.home-games-cont{
+    max-width: 1200px;
+    margin: 80px auto 20px;
+    /* background-color: #1C3553; */
+    height: 100vh;
+}
+
+.featured-games{
+    display: flex;
+    justify-content: space-between;
+}
+
+.platforms-cont{
+    list-style-type: none;
+    display: flex;
+
+    li{
+        margin: 0 10px;
+        font-size: 16px;
+        padding: 5px 22px;
+        border-radius: 20px;
+        background-color: rgba(208, 233, 255, 0.2);
+        height: fit-content;
+        font-family: poppinsSemi, Arial, Helvetica, sans-serif;
+
+        &:hover{
+            background-color: #58728E;
+        }
+    }
+}
+
+.game-card-cont{
+    width: 20vw;
+    height: 50vw;
+
+    .top-img{
+        background-size: cover;
+        height: 50%;
+        display: flex;
+        border-radius: 3px;
+        position: relative;
+
+        img{
+            width: 100%;
+            margin-top: auto;
+            display: block;
+        }
+
+        .new-game{
+            position: absolute;
+            margin: 20px;
+            font-family: archivo, Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: #0A0D15;
+            padding: 8px 10px;
+            border: 2px solid white;
+            border-radius: 4px;
+        }
+
+        &:hover{
+            transform: scaleX(1.2);
+        }
+    }
+
+}
+
+.game-card-words{
+    h3{
+        font-family: poppinsSemi, Arial, Helvetica, sans-serif;
+        color: #C9E1EF;
+        font-size: 20px;
+    }
+
+    h4{
+        font-family: archivo, Arial, Helvetica, sans-serif;
+        color: rgba(208, 233, 255, 0.6);
+        font-size: 14px;
+    }
+
+    .gaming-platforms{
+        /* color: #8697AB; */
+        color: rgba(208, 233, 255, 0.6);
+        display: flex;
+        margin: 10px 0;
+
+        .icon-cont{
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }

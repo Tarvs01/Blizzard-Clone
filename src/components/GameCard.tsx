@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { gameCardData } from "../data/types";
 
 function GameCard({ game }: { game: gameCardData }) {
+  let toolBox = useRef(null);
   return (
     <div className="game-card-cont">
       <div
@@ -16,7 +17,17 @@ function GameCard({ game }: { game: gameCardData }) {
         <h4>{game.genre}</h4>
         <div className="gaming-platforms">
           {game.platforms.includes("battle.net") && (
-            <div className="icon-cont">
+            <div
+              className="icon-cont"
+              onMouseOver={() => {
+                console.log("holla! toolbox called.");
+
+                console.log(toolBox.current);
+              }}
+              onClick={() => {
+                console.log("hi! toolbox clicked");
+              }}
+            >
               <svg
                 width="14px"
                 height="14px"
@@ -42,6 +53,10 @@ function GameCard({ game }: { game: gameCardData }) {
 	                c2.6,0.4,5.2,1.4,7.1,2.5C18.1,11.5,17.3,12.8,16.5,13.8L16.5,13.8z"
                 />
               </svg>
+              <div className="hover-tooltip-cont" ref={toolBox}>
+                <div className="hover-tooltip-triangle"></div>
+                <p>Battle.net</p>
+              </div>
             </div>
           )}
 

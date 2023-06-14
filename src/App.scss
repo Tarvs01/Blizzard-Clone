@@ -1,8 +1,6 @@
 $hover-fade: #232531;
 $body-bg: #171717;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @font-face {
     font-family: poppins;
     src: url(fonts/Poppins-Medium.ttf);
@@ -307,13 +305,59 @@ nav {
     }
 }
 
+.small-nav{
+    background-color: #262A3F;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    position: relative;
+}
+
+.small-nav-right, .small-nav-left{
+    padding: 6px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        background-color: #3B3B4D;
+    }
+
+    svg{
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.small-nav-logo svg{
+    color: rgb(0, 174, 255);
+    width: 60px;
+
+    &:hover{
+        color: #00D1FF;
+    }
+}
+
+.small-nav-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
 .carousel-cont {
-    background-image: linear-gradient(270deg, #203955, #243548);
+    background-image: linear-gradient(270deg, #172234, #243548);
 }
 
 .slider-cont{
     width: 1109px;
-    height: 110vh;
+    height: 730px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -327,18 +371,19 @@ nav {
         }
     }
 
-        &:has(.right-inactive-carousel:hover) {
-            left: 49%;
+    &:has(.right-inactive-carousel:hover) {
+        left: 49%;
     
-            .right-inactive-carousel {
-                opacity: 1;
-            }
+        .right-inactive-carousel {
+            opacity: 1;
         }
+    }
 }
 
 .slide{
     width: 100%;
     height: 100%;
+    background-size: cover;
     background-position: -250px;
     background-repeat: no-repeat;
     position: absolute;
@@ -494,10 +539,9 @@ nav {
 }
 
 .home-games-cont{
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 80px auto 20px;
     /* background-color: #1C3553; */
-    height: 100vh;
 }
 
 .featured-games{
@@ -524,21 +568,30 @@ nav {
     }
 }
 
+.game-cards-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+    grid-row-gap: 20px;
+}
+
 .game-card-cont{
-    width: 20vw;
-    height: 50vw;
+    width: 90%;
+    height: fit-content;
 
     .top-img{
         background-size: cover;
-        height: 50%;
+        height: 25vw;
         display: flex;
         border-radius: 3px;
-        position: relative;
+        width: 100%;
 
         img{
             width: 100%;
             margin-top: auto;
             display: block;
+            max-height: 100%;
         }
 
         .new-game{
@@ -552,19 +605,17 @@ nav {
             border: 2px solid white;
             border-radius: 4px;
         }
-
-        &:hover{
-            transform: scaleX(1.2);
-        }
     }
 
 }
 
 .game-card-words{
+    padding: 15px 0;
     h3{
         font-family: poppinsSemi, Arial, Helvetica, sans-serif;
         color: #C9E1EF;
         font-size: 20px;
+        margin-bottom: 5px;
     }
 
     h4{
@@ -583,11 +634,42 @@ nav {
             width: 20px;
             height: 20px;
             margin-right: 15px;
+            position: relative;
 
             svg{
                 width: 100%;
                 height: 100%;
             }
+
+            &:hover .hover-tooltip-cont{
+                display: block;
+            }
         }
+    }
+}
+
+.hover-tooltip-cont{
+    position: absolute;
+    background-color: #3A465F;
+    color: white;
+    font-family: archivo, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180%;
+    display: none;
+
+    .hover-tooltip-triangle{
+        height: 10px;
+        width: 20px;
+        position: absolute;
+        bottom: 98%;
+        background-color: #3A465F;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     }
 }

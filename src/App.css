@@ -125,6 +125,7 @@ nav {
 .nav-left .nav-button svg, .nav-right .nav-button svg {
   width: 25px;
   height: 25px;
+  color: #148EFF;
   margin-right: 10px;
 }
 .nav-left .nav-button:hover, .nav-right .nav-button:hover {
@@ -274,7 +275,6 @@ nav {
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  position: relative;
 }
 
 .small-nav-right, .small-nav-left {
@@ -295,21 +295,61 @@ nav {
 .small-nav-logo svg {
   color: rgb(0, 174, 255);
   width: 60px;
+  height: 30px;
 }
 .small-nav-logo svg:hover {
   color: #00D1FF;
 }
 
+#small-menu-logo svg {
+  width: 70px;
+  height: 40px;
+}
+
 .small-nav-overlay {
   position: fixed;
-  top: 0;
+  top: 57px;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10000;
+  z-index: 50;
 }
 
+.small-right-nav, .small-left-nav {
+  width: 45vw;
+  height: 100vh;
+  background-color: #171926;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+.small-right-nav .top, .small-left-nav .top {
+  display: flex;
+  padding: 8px 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+.small-right-nav .small-nav-left, .small-left-nav .small-nav-left {
+  background-color: hsla(0deg, 0%, 100%, 0.05);
+  padding: 8px 8px;
+}
+.small-right-nav .small-nav-left:hover, .small-left-nav .small-nav-left:hover {
+  background-color: #2F303C;
+}
+
+.small-left-nav {
+  left: 0;
+}
+
+@keyframes slide-in-right {
+  0% {
+    right: -45vw;
+  }
+  100% {
+    right: 0;
+  }
+}
 .carousel-cont {
   background-image: linear-gradient(270deg, #172234, #243548);
 }

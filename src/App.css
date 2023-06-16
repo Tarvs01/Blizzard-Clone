@@ -44,12 +44,12 @@ nav {
   z-index: 200;
 }
 
-.nav-left li > svg {
-  height: 40px;
-  margin-right: 10px;
+.main-nav-logo svg {
   color: rgb(0, 174, 255);
+  height: 40px;
+  width: 89px;
 }
-.nav-left li > svg:hover {
+.main-nav-logo svg:hover {
   color: #00D1FF;
 }
 
@@ -133,6 +133,10 @@ nav {
 }
 .nav-left #nav-last:hover, .nav-right #nav-last:hover {
   background-color: transparent;
+}
+
+.down-arrow svg {
+  height: 25px;
 }
 
 .nav-hover-container {
@@ -641,6 +645,83 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.small-nav-left-container {
+  width: 100%;
+  font-family: archivo, Arial, Helvetica, sans-serif;
+}
+
+.small-nav-left-main-cont .small-nav-left-main {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 8px;
+}
+.small-nav-left-main-cont .small-nav-left-main svg {
+  width: 15px;
+  color: hsla(0deg, 0%, 100%, 0.3);
+  margin-left: 6px;
+}
+.small-nav-left-main-cont .small-nav-left-heading {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 5px;
+}
+.small-nav-left-main-cont .small-nav-left-heading:hover {
+  background-color: #232531;
+}
+
+.small-nav-left-main:has(.small-nav-left-subitems) .small-nav-left-heading:hover {
+  background-color: #1C1D27;
+}
+
+.small-nav-left-subitems {
+  font-family: archivo, Arial, Helvetica, sans-serif;
+}
+.small-nav-left-subitems .nav-hover-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.small-nav-left-subitems .nav-hover-item:hover {
+  background-color: #1C1D27;
+}
+.small-nav-left-subitems .nav-hover-item .nav-hover-words {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+.small-nav-left-subitems .nav-hover-item .nav-hover-words .nav-hover-genre {
+  color: gray;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.small-nav-left-subitems .nav-hover-item .nav-hover-words .nav-hover-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.small-nav-left-subitems .nav-hover-item .nav-hover-words .nav-hover-title svg {
+  display: inline-block;
+  height: 15px;
+  position: relative;
+  left: -5px;
+  top: 1px;
+}
+
+.small-nav-upcoming {
+  color: gray;
+  font-size: 16px;
+  margin: 5px 5px;
+  padding: 10px 19px 0;
+  font-weight: 700;
+  font-family: archivo, Arial, Helvetica, sans-serif;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -23,3 +23,12 @@ export interface gameCardData {
   platforms: string[];
   generalPlatforms: string[];
 }
+
+export interface navGames{
+  id: number;
+  imgType: string;
+  img: string;
+  name: string;
+  genre: string;
+  isNew: boolean;
+}

@@ -30,8 +30,9 @@ $sm-hover-fade: #1C1D27;
 
 body{
     background-color: $body-bg;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     color: white;
+    width: 100vw;
 }
 
 .App {
@@ -317,6 +318,13 @@ nav {
     justify-content: space-between;
     padding: 10px;
     align-items: center;
+    width: 100vw;
+}
+
+@media screen and (max-width: 500px) {
+    .small-nav{
+        padding: 10px 2px;
+    }
 }
 
 .small-nav-right, .small-nav-left{

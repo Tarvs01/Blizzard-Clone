@@ -22,8 +22,9 @@
 
 body {
   background-color: #171717;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   color: white;
+  width: 100vw;
 }
 
 .App {
@@ -279,8 +280,14 @@ nav {
   justify-content: space-between;
   padding: 10px;
   align-items: center;
+  width: 100vw;
 }
 
+@media screen and (max-width: 500px) {
+  .small-nav {
+    padding: 10px 2px;
+  }
+}
 .small-nav-right, .small-nav-left {
   padding: 6px 10px;
   border-radius: 5px;

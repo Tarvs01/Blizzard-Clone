@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 function Navbar() {
-  const breakPoint = 600;
+  const breakPoint = 980;
   const [size, setSize] = useState(window.innerWidth);
-  const [show, setShow] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [showLeftNav, setShowLeftNav] = useState(false);
   const [showRightNav, setShowRightNav] = useState(false);
@@ -24,9 +23,6 @@ function Navbar() {
 
   const checkSize = () => {
     setSize(window.innerWidth);
-    if (size > breakPoint) {
-      setShow(false);
-    }
   };
 
   useEffect(() => {
@@ -67,7 +63,7 @@ function Navbar() {
 
   return (
     <>
-      {size > 980 && (
+      {size > breakPoint && (
         <nav>
           <ul className="nav-left">
             <li>
@@ -810,7 +806,7 @@ function Navbar() {
         </nav>
       )}
 
-      {size <= 980 && (
+      {size <= breakPoint && (
         <div className="small-nav">
           <div className="small-nav-left" onClick={() => showLeftNavbar()}>
             <svg>

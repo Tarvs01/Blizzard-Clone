@@ -28,6 +28,10 @@ $sm-hover-fade: #1C1D27;
     box-sizing: border-box;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background-color: $body-bg;
     overflow-x: hidden !important;
@@ -441,6 +445,19 @@ nav {
 @media screen and (max-width: 720px) {
     .slider-cont{
         width: 100vw !important;
+        height: 80vh !important;
+    }
+
+    .carousel-main-heading{
+        font-size: 35px !important;
+    }
+
+    .slide-content-cont img{
+        width: 150px !important;
+    }
+
+    .carousel-secondary-button{
+        display: none;
     }
 }
 
@@ -636,6 +653,14 @@ nav {
 
     &:hover{
         background-color: white;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .slider-tab{
+        width: 52px;
+        height: 8px;
+        border-radius: 2px;
     }
 }
 

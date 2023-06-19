@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SlideData } from "../data/types";
 
 interface SlideProperties {
@@ -8,6 +8,29 @@ interface SlideProperties {
 }
 
 function Slide({ slide, translate, setActive }: SlideProperties) {
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const [translateDistance, setTranslateDistance] = useState(102);
+
+  const checkWidth = () => {
+    setWidth(window.innerWidth);
+    if(width > 1200){
+      setTranslateDistance(102);
+    }
+    else if(width > 600){
+      setTranslateDistance(100.5);
+    }
+    console.log(translateDistance);
+    
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", checkWidth);
+    return () => {
+      window.removeEventListener("resize", checkWidth);
+    };
+  });
+
   useEffect(() => {
     if (translate === 0) {
       setActive(slide.id);
@@ -22,8 +45,9 @@ function Slide({ slide, translate, setActive }: SlideProperties) {
         translate === 1 ? "right-inactive-carousel" : ""
       }`}
       style={{
-        backgroundImage: `url(pictures/${slide.bgImage})`,
-        transform: `translateX(${translate * 102}%)`,
+        backgroundImage: `url(pictures/${width > 1200 ? slide.bgImage : slide.smBgImage})`,
+        backgroundPosition: `${width > 1200 ? "-250px" : ""}`,
+        transform: `translateX(${translate * translateDistance}%)`,
         transition: `${
           [-1, 0, 1].includes(translate) ? "all ease 0.3s" : "none"
         }`,

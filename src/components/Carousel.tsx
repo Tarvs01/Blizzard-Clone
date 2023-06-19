@@ -48,7 +48,7 @@ function Carousel() {
     let actualActive = 0;
     if (activeSlideId === 1) {
       actualActive = numberOfSlides - 1;
-    } else if (activeSlideId == 2) {
+    } else if (activeSlideId === 2) {
       actualActive = numberOfSlides;
     } else {
       actualActive = activeSlideId - 2;
@@ -58,7 +58,6 @@ function Carousel() {
     console.log("new slide is " + id);
 
     let translateArray = [...translates];
-    console.log(translateArray);
 
     if (id < actualActive) {
       for (let i = 0; i < actualActive - id; i++) {
@@ -89,7 +88,6 @@ function Carousel() {
     }
 
     setTranslates(translateArray);
-    console.log(translateArray);
   }
 
   return (

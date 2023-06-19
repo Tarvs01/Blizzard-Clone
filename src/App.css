@@ -27,6 +27,25 @@ body {
   width: 100vw;
 }
 
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+  background-color: #41445C;
+}
+
+::-webkit-scrollbar-track {
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #172234;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
 .App {
   position: relative;
 }
@@ -367,38 +386,48 @@ nav {
   background-image: linear-gradient(270deg, #172234, #243548);
 }
 
+@media screen and (max-width: 1200px) {
+  .slider-cont {
+    width: 92vw !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  .slider-cont {
+    width: 100vw !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slider-cont:has(.left-inactive-carousel:hover) {
+    left: 51%;
+  }
+  .slider-cont:has(.left-inactive-carousel:hover) .left-inactive-carousel {
+    opacity: 1;
+  }
+  .slider-cont:has(.right-inactive-carousel:hover) {
+    left: 49%;
+  }
+  .slider-cont:has(.right-inactive-carousel:hover) .right-inactive-carousel {
+    opacity: 1;
+  }
+}
 .slider-cont {
-  width: 1109px;
+  width: 83vw;
   height: 730px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.2s ease;
 }
-.slider-cont:has(.left-inactive-carousel:hover) {
-  left: 51%;
-}
-.slider-cont:has(.left-inactive-carousel:hover) .left-inactive-carousel {
-  opacity: 1;
-}
-.slider-cont:has(.right-inactive-carousel:hover) {
-  left: 49%;
-}
-.slider-cont:has(.right-inactive-carousel:hover) .right-inactive-carousel {
-  opacity: 1;
-}
 
 .slide {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: -250px;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px;
-  /* transition: all ease 0.3s; */
 }
 
 .left-carousel-button, .right-carousel-button {
@@ -431,6 +460,11 @@ nav {
   right: -4%;
 }
 
+@media screen and (max-width: 1200px) {
+  .left-carousel-button, .right-carousel-button {
+    display: none;
+  }
+}
 .active-carousel {
   opacity: 1;
 }
@@ -489,6 +523,22 @@ nav {
   background-color: #5C6277;
 }
 
+@media screen and (max-width: 1200px) {
+  .slide-content-cont {
+    left: 50%;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+  }
+  .slide-content-cont .carousel-main-heading {
+    font-size: 50px;
+    text-align: center;
+    max-width: 500px;
+  }
+}
 .slide-overlay {
   width: 100%;
   height: 100%;

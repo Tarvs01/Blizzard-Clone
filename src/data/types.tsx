@@ -1,6 +1,7 @@
 export interface SlideData {
   id: number;
   bgImage: string;
+  smBgImage: string;
   image: string;
   mainHeading: string;
   subHeading?: string;

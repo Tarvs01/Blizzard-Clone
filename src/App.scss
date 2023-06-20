@@ -22,6 +22,11 @@ $sm-hover-fade: #1C1D27;
     src: url(fonts/Archivo-VariableFont_wdth\,wght.ttf);
 }
 
+@font-face {
+    font-family: montserrat;
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -715,22 +720,36 @@ nav {
 }
 
 .home-games-cont{
-    max-width: 1100px;
+    width: 80vw;
     margin: 80px auto 20px;
     /* background-color: #1C3553; */
+}
+
+@media screen and (max-width: 1200px) {
+    .home-games-cont{
+        width: 95vw;
+    }
 }
 
 .featured-games{
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+
+    h1{
+        font-family: montserrat, Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 36px;
+    }
 }
 
 .platforms-cont{
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
 
     li{
-        margin: 0 10px;
+        margin: 0 10px 10px 0;
         font-size: 16px;
         padding: 5px 22px;
         border-radius: 20px;
@@ -750,6 +769,32 @@ nav {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 30px;
     grid-row-gap: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .game-cards-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }   
+
+    .featured-games{
+        flex-direction: column;
+
+        h1{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .game-cards-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .game-cards-container{
+        grid-template-columns: 1fr;
+    }
 }
 
 .game-card-cont{
@@ -783,6 +828,41 @@ nav {
         }
     }
 
+}
+
+@media screen and (max-width: 680px) {
+    .game-card-cont{
+        .new-game{
+            margin: 5px !important;
+            padding: 6px 8px !important;
+            font-size: 12px !important;
+            border: 1px solid white !important;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .game-card-cont{
+        .top-img{
+            height: 40vw !important;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .game-card-cont{
+        .top-img{
+            height: 55vw !important;
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .game-card-cont{
+        .top-img{
+            height: 100vw !important;
+        }
+    }
 }
 
 .game-card-words{

@@ -70,7 +70,7 @@ function Slide({ slide, translate, setActive }: SlideProperties) {
           <h2 className="carousel-sub-heading">{slide.subHeading}</h2>
         )}
         <div className="carousel-button-cont">
-          <button className="carousel-main-button">
+          <button className="carousel-main-button main-button">
             {slide.mainButtonText}
           </button>
           {slide.secondaryButtonText && (

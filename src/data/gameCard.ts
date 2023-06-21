@@ -112,3 +112,17 @@ export const gameCards : gameCardData[] = [
         generalPlatforms: [""]
     }
 ]
+
+export const upcomingGames : gameCardData[] = [
+    {
+        id: 1,
+        name: "Warcraft Arclight Rumble",
+        genre: "MOBILE ACTION STRATEGY",
+        isNew: false,
+        image: "gryphon-logo-square.webp",
+        bgImage: "gryphon-square.webp",
+        video: "",
+        platforms: ["apple", "googleplay"],
+        generalPlatforms: [""]
+    }
+]

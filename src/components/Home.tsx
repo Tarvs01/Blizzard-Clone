@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { gameCards, upcomingGames } from "../data/gameCard";
 import GameCard from "./GameCard";
 import { gameCardData } from "../data/types";
+import Footer from "./Footer";
 
 function Home() {
   const [games, setGames] = useState<gameCardData[]>([]);
@@ -64,6 +65,8 @@ function Home() {
             </div>
           </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

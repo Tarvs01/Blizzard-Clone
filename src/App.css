@@ -1032,7 +1032,6 @@ nav {
 
 .download-battlenet-container {
   background-image: url(pictures/2600_Promo.webp);
-  height: 700px;
   width: 100vw;
   padding: 60px 10px;
 }
@@ -1139,6 +1138,142 @@ nav {
   .download-bn-buttons-cont .gray-button {
     margin-top: 20px;
   }
+}
+.footer {
+  color: hsla(0deg, 0%, 100%, 0.7);
+  font-family: archivo, Helvetica, Arial, sans-serif;
+  padding: 30px 10px 70px;
+}
+
+.languages-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s linear;
+}
+.languages-cont:hover {
+  color: white;
+}
+.languages-cont:hover > svg {
+  color: #00D1FF;
+}
+.languages-cont:hover .arrow-conts {
+  color: hsla(0deg, 0%, 100%, 0.8);
+}
+.languages-cont > svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: 10px;
+  color: #009dff;
+}
+.languages-cont .arrow-conts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+.languages-cont .arrow-conts svg {
+  width: 13px;
+  height: 13px;
+  position: relative;
+}
+.languages-cont .arrow-conts #arrow-up {
+  transform: rotate(180deg);
+  top: 3px;
+}
+.languages-cont .arrow-conts #arrow-down {
+  bottom: 3px;
+}
+
+.footer-logo-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0 40px;
+}
+.footer-logo-cont svg {
+  color: rgb(0, 174, 255);
+  height: 60px;
+  width: 130px;
+}
+.footer-logo-cont svg:hover {
+  color: #00D1FF;
+}
+.footer-logo-cont p {
+  font-size: 8px;
+  font-family: archivo, Arial, Helvetica, sans-serif;
+  letter-spacing: 3px;
+}
+
+.primary-links {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.primary-links li {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: hsla(0deg, 0%, 100%, 0.7);
+  transition: all 0.2s linear;
+}
+.primary-links li:hover {
+  color: white;
+}
+.primary-links li::after {
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: hsla(0deg, 0%, 100%, 0.3);
+  display: inline-block;
+  margin-left: 10px;
+}
+.primary-links li:last-child::after {
+  display: none;
+}
+
+.one-app {
+  text-align: center;
+  color: hsla(0deg, 0%, 100%, 0.7);
+  margin: 30px 0;
+}
+.one-app svg {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 0 10px;
+  color: #148EFF;
+}
+.one-app a {
+  color: #009dff;
+}
+.one-app a:hover {
+  color: #66C4FF;
+}
+
+.copyright {
+  color: hsla(0deg, 0%, 100%, 0.5);
+  font-size: 12px;
+  text-align: center;
+}
+
+.trademark {
+  color: hsla(0deg, 0%, 100%, 0.5);
+  font-size: 12px;
+  text-align: center;
+}
+.trademark a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.trademark a:hover {
+  color: white;
+}
+
+#secondary-links {
+  font-size: 13px;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=App.css.map */

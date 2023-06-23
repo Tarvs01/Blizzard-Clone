@@ -8,7 +8,7 @@ function Carousel() {
 
   const [translates, setTranslates] = useState([0]);
   const [activeSlideId, setActiveSlideId] = useState(1);
-  const [touchPosition, setTouchPosition] = useState<number |null>(0);
+  const [touchPosition, setTouchPosition] = useState<number | null>(0);
 
   useEffect(() => {
     let initial = -2;
@@ -55,9 +55,6 @@ function Carousel() {
       actualActive = activeSlideId - 2;
     }
 
-    console.log("active slide is " + actualActive);
-    console.log("new slide is " + id);
-
     let translateArray = [...translates];
 
     if (id < actualActive) {
@@ -91,36 +88,40 @@ function Carousel() {
     setTranslates(translateArray);
   }
 
-  const handleTouchStart = (e : TouchEvent) => {
+  const handleTouchStart = (e: TouchEvent) => {
     const touchDown = e.touches[0].clientX;
     setTouchPosition(touchDown);
-  }
+  };
 
-  const handleTouchMove = (e : TouchEvent) => {
+  const handleTouchMove = (e: TouchEvent) => {
     const touchDown = touchPosition;
 
-    if(touchDown === null){
+    if (touchDown === null) {
       return;
     }
 
     const currentTouch = e.touches[0].clientX;
     const diff = touchDown - currentTouch;
 
-    if(diff > 5){
+    if (diff > 5) {
       shiftRight();
     }
 
-    if(diff < -5){
+    if (diff < -5) {
       shiftLeft();
     }
 
     setTouchPosition(null);
-  }
+  };
 
   return (
     <div>
       <div className="hero-cont">
-        <div className="slider-cont" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
+        <div
+          className="slider-cont"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
           {slidesData.map((slide) => {
             return (
               <Slide

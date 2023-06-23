@@ -684,6 +684,12 @@ nav {
     }
 }
 
+@media (hover : none) and (pointer : coarse){
+    .slider-tab:hover{
+        background-color: #8697AA;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .slider-tab{
         width: 52px;
@@ -915,6 +921,17 @@ nav {
     }
 }
 
+@media (hover : none){
+    .hover-tooltip-cont{
+        display: none !important;
+    }
+}
+
+.hover-tooltip-container{
+    width: 20px;
+    height: 30px;
+}
+
 .hover-tooltip-cont{
     position: absolute;
     background-color: #3A465F;
@@ -928,6 +945,7 @@ nav {
     transform: translateX(-50%);
     top: 180%;
     display: none;
+    width: max-content;
 
     .hover-tooltip-triangle{
         height: 10px;

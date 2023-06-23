@@ -662,6 +662,12 @@ nav {
   display: flex;
   flex-wrap: wrap;
 }
+.platforms-cont .inactive-category:hover {
+  background-color: #58728E;
+}
+.platforms-cont .active-category {
+  background-color: #0B94EC !important;
+}
 .platforms-cont li {
   margin: 0 10px 10px 0;
   font-size: 16px;
@@ -672,7 +678,7 @@ nav {
   font-family: poppinsSemi, Arial, Helvetica, sans-serif;
 }
 .platforms-cont li:hover {
-  background-color: #58728E;
+  cursor: pointer;
 }
 
 .game-cards-container {
@@ -714,6 +720,10 @@ nav {
   display: flex;
   border-radius: 3px;
   width: 100%;
+  transition: all 0.2s linear;
+}
+.game-card-cont .top-img:hover {
+  transform: scale(1.04, 1.04);
 }
 .game-card-cont .top-img img {
   width: 100%;

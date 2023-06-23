@@ -10,7 +10,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "diablo4.webp",
         video: "",
         platforms: ["battle.net", "xbox", "playstation"],
-        generalPlatforms: ["pc"]
+        generalPlatforms: ["pc", "console"]
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "wow-dragonflight-rectangle-GC.webp",
         video: "",
         platforms: ["battle.net"],
-        generalPlatforms: [""]
+        generalPlatforms: ["pc"]
     },
     {
         id: 3,
@@ -32,7 +32,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "overwatch2.webp",
         video: "",
         platforms: ["battle.net", "xbox", "playstation", "switch"],
-        generalPlatforms: ["pc"]
+        generalPlatforms: ["pc", "console"]
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "WoTLK_game-card-WoWClassic.webp",
         video: "",
         platforms: ["battle.net"],
-        generalPlatforms: [""]
+        generalPlatforms: ["pc"]
     },
     {
         id: 5,
@@ -54,7 +54,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "hearthstone-with-cards.webp",
         video: "",
         platforms: ["battle.net", "apple", "googleplay"],
-        generalPlatforms: ["mobile"]
+        generalPlatforms: ["pc","mobile"]
     },
     {
         id: 6,
@@ -65,7 +65,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "diablo-immortal.webp",
         video: "",
         platforms: ["battle.net", "apple", "googleplay"],
-        generalPlatforms: [""]
+        generalPlatforms: ["pc", "mobile"]
     },
     {
         id: 7,
@@ -76,7 +76,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "d2.webp",
         video: "",
         platforms: ["battle.net", "xbox", "playstation", "switch"],
-        generalPlatforms: [""]
+        generalPlatforms: ["pc", "console"]
     },
     {
         id: 8,
@@ -87,7 +87,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "diablo3.webp",
         video: "",
         platforms: ["battle.net", "xbox", "playstation", "switch"],
-        generalPlatforms: ["console"]
+        generalPlatforms: ["pc","console"]
     },
     {
         id: 9,
@@ -98,7 +98,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "starcraft2.webp",
         video: "",
         platforms: ["battle.net"],
-        generalPlatforms: [""]
+        generalPlatforms: ["pc"]
     },
     {
         id: 10,
@@ -109,7 +109,7 @@ export const gameCards : gameCardData[] = [
         bgImage: "warcraft-reforged.webp",
         video: "",
         platforms: ["battle.net"],
-        generalPlatforms: [""]
+        generalPlatforms: ["pc"]
     }
 ]
 

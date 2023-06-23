@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Carousel from "./Carousel";
 import Navbar from "./Navbar";
-import { gameCards, upcomingGames } from "../data/gameCard";
-import GameCard from "./GameCard";
-import { gameCardData } from "../data/types";
 import Footer from "./Footer";
+import GamesContainer from "./GamesContainer";
 
 function Home() {
-  const [games, setGames] = useState<gameCardData[]>([]);
-
-  useEffect(() => {
-    setGames(gameCards);
-  }, []);
 
   return (
     <div className="home">
@@ -20,36 +13,7 @@ function Home() {
         <Carousel />
       </div>
       <div className="home-games-container">
-        <div className="home-games-cont">
-          <div className="featured-games">
-            <h1>FEATURED GAMES</h1>
-            <ul className="platforms-cont">
-              <li>PC</li>
-              <li>CONSOLE</li>
-              <li>MOBILE</li>
-            </ul>
-          </div>
-
-          <div className="game-cards-container">
-            {games.map((game) => {
-              return <GameCard key={game.id} game={game} />;
-            })}
-          </div>
-
-          <div className="featured-games">
-            <h1>UPCOMING</h1>
-          </div>
-
-          <div className="game-cards-container">
-            {
-              upcomingGames.map((game) => {
-                return <GameCard key={game.id} game={game} />
-              })
-            }
-          </div>
-
-          <button className="main-button blue-button all-games-btn">See All Games</button>
-        </div>
+        <GamesContainer />
       </div>
 
       <div className="download-battlenet-container">

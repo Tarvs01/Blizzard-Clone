@@ -42,7 +42,7 @@ function Footer() {
             <svg>
               <use href='../pictures/bnet-logo-01.svg#Layer_1' xlinkHref='../pictures/bnet-logo-01.svg#Layer_1'></use>
             </svg>
-            <a href="#">Battle.net Desktop App</a>
+            <a href="/">Battle.net Desktop App</a>
             </p>
 
             <p className="copyright">
@@ -50,7 +50,7 @@ function Footer() {
             </p>
 
             <p className="trademark">
-              All &nbsp;<a href="#">trademarks</a>&nbsp;
+              All &nbsp;<a href="/">trademarks</a>&nbsp;
                referenced herein are the properties of their respective owners.
             </p>
 

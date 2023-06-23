@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, TouchEvent } from "react";
 import Slide from "./Slide";
 import { slidesData } from "../data/slidesData";
 import SliderTab from "./SliderTab";
@@ -8,6 +8,7 @@ function Carousel() {
 
   const [translates, setTranslates] = useState([0]);
   const [activeSlideId, setActiveSlideId] = useState(1);
+  const [touchPosition, setTouchPosition] = useState<number |null>(0);
 
   useEffect(() => {
     let initial = -2;
@@ -90,10 +91,36 @@ function Carousel() {
     setTranslates(translateArray);
   }
 
+  const handleTouchStart = (e : TouchEvent) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  }
+
+  const handleTouchMove = (e : TouchEvent) => {
+    const touchDown = touchPosition;
+
+    if(touchDown === null){
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if(diff > 5){
+      shiftRight();
+    }
+
+    if(diff < -5){
+      shiftLeft();
+    }
+
+    setTouchPosition(null);
+  }
+
   return (
     <div>
       <div className="hero-cont">
-        <div className="slider-cont">
+        <div className="slider-cont" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
           {slidesData.map((slide) => {
             return (
               <Slide
